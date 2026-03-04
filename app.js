@@ -32,7 +32,6 @@ document.getElementById("visitCount").textContent = visits
 // Internet Status
 // --------------------
 const inetStatus = document.getElementById("statusTextInet")
-
 function updateInternetStatus() {
   if (navigator.onLine) {
     inetStatus.textContent = "Online"
@@ -44,8 +43,10 @@ function updateInternetStatus() {
 }
 updateInternetStatus()
 
-globalThis.addEventListener("online", updateInternetStatus)
-globalThis.addEventListener("offline", updateInternetStatus)
+addEventListener("online", updateInternetStatus)
+addEventListener("offline", updateInternetStatus)
+
+setInterval(updateInternetStatus, 5000)
 
 
 
@@ -53,12 +54,10 @@ globalThis.addEventListener("offline", updateInternetStatus)
 // PWA Server Status
 // --------------------
 const pwaStatus = document.getElementById("statusTextPWA")
-
 async function checkPWAServer() {
   try {
-
     // try to fetch the manifest with no cache to check if the server is reachable
-    const response = await fetch("/manifest.json", {
+    const response = await fetch(`/manifest.json?ts=${Date.now()}`, {
       method: "GET",
       cache: "no-store"
     })
@@ -72,16 +71,12 @@ async function checkPWAServer() {
     }
 
   } catch {
-
     pwaStatus.textContent = "Server unreachable"
     pwaStatus.style.color = "red"
-
   }
 }
 
-// run once
-await checkPWAServer()
-// repeat every 10 seconds
+checkPWAServer()
 setInterval(checkPWAServer, 10000)
 
 

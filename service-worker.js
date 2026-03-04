@@ -1,12 +1,12 @@
 const CACHE_NAME = "pwa-demo-v1"
 
 const FILES = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/app.js",
-  "/manifest.json",
-  "/icon.png"
+  "./",
+  "./index.html",
+  "./styles.css",
+  "./app.js",
+  "./manifest.json",
+  "./icon.png"
 ]
 
 self.addEventListener("install", event => {

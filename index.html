@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PWA Demo</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#4f46e5">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+
+<!-- App Icons -->
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>PWA Demo</h1>
+
+<h3>Click Counter</h3>
+<p>Clicks: <span id="clickCount">0</span></p>
+<button id="clickBtn">Click me</button>
+
+<hr>
+
+<h3>Page Visits</h3>
+<p>You visited this page <b id="visitCount">0</b> times.</p>
+
+<hr>
+
+<h2>Status</h2>
+
+<h3>Internet</h3>
+<p id="statusTextInet" class="status">Checking...</p>
+<h3>PWA Server</h3>
+<p id="statusTextPWA" class="status">Checking...</p>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>

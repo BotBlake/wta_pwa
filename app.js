@@ -57,7 +57,7 @@ const pwaStatus = document.getElementById("statusTextPWA")
 async function checkPWAServer() {
   try {
     // try to fetch the manifest with no cache to check if the server is reachable
-    const response = await fetch(`/manifest.json?ts=${Date.now()}`, {
+    const response = await fetch(`manifest.json?ts=${Date.now()}`, {
       method: "GET",
       cache: "no-store"
     })

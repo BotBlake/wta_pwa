@@ -84,7 +84,6 @@ setInterval(checkPWAServer, 10000)
 // --------------------
 // Service Worker
 // --------------------
-
 if ("serviceWorker" in navigator) {
   try {
     navigator.serviceWorker.register("service-worker.js")
